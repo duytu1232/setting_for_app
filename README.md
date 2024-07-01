@@ -1,3 +1,3 @@
-# setting_for_app
+# Setting for App
 
-This is Setting Widget for basic app
+This is the Setting Widget for a basic app
