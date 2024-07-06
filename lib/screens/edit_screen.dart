@@ -154,7 +154,6 @@ class _EditAccountScreenState extends State<EditAccountScreen> {
                   }).toList(),
                 ),
               ),
-              const SizedBox(height: 20),
             ],
           ),
         ),

@@ -100,10 +100,12 @@ class _AccountScreenState extends State<AccountScreen> {
             const SizedBox(height: 20),
             SettingItem(
               title: localizations.language,
-              icon: Ionicons.earth,
-              bgColor: Colors.red.shade100,
-              iconColor: Colors.orange,
-              value: languageProvider.currentLocale.languageCode == 'en' ? 'English' : 'Tiếng Việt',
+              icon: Ionicons.language_outline,
+              bgColor: Colors.purple.shade200,
+              iconColor: Colors.white,
+              value: languageProvider.currentLocale.languageCode == 'en'
+                  ? 'English'
+                  : 'Tiếng Việt',
               onTap: () {
                 showDialog(
                   context: context,
@@ -115,14 +117,16 @@ class _AccountScreenState extends State<AccountScreen> {
                         ListTile(
                           title: Text('English'),
                           onTap: () {
-                            languageProvider.changeLocale(const Locale('en', 'US'));
+                            languageProvider
+                                .changeLocale(const Locale('en', 'US'));
                             Navigator.of(context).pop();
                           },
                         ),
                         ListTile(
                           title: Text('Tiếng Việt'),
                           onTap: () {
-                            languageProvider.changeLocale(const Locale('vi', 'VN'));
+                            languageProvider
+                                .changeLocale(const Locale('vi', 'VN'));
                             Navigator.of(context).pop();
                           },
                         ),
@@ -145,8 +149,8 @@ class _AccountScreenState extends State<AccountScreen> {
             SettingSwitch(
               title: localizations.darkMode,
               icon: Ionicons.moon,
-              bgColor: Colors.purple.shade100,
-              iconColor: Colors.purple,
+              bgColor: Colors.black,
+              iconColor: Colors.white,
               value: themeProvider.themeMode == ThemeMode.dark,
               onToggle: (bool newValue) {
                 themeProvider.toggleTheme(newValue);
@@ -164,6 +168,15 @@ class _AccountScreenState extends State<AccountScreen> {
               value: "",
               onTap: () {},
             ),
+            const SizedBox(height: 20),
+            SettingItem(
+                title: localizations.logout,
+                icon: Ionicons.log_out_outline,
+                bgColor: Colors.red.shade100,
+                iconColor: Colors.red,
+                value: "",
+                onTap: () {}, //Nhấn để thoát tài khoản về đăng nhập
+            )
           ],
         ),
       ),
