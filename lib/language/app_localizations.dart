@@ -30,6 +30,7 @@ class AppLocalizations {
         'dob': 'Date of Birth',
         'gender': 'Gender',
         'add_avatar': 'Add Avatar',
+        'notifcation': 'Notification',
         'log_out' : 'Log out', // Thêm chuỗi văn bản này
       },
       'vi': {
@@ -44,8 +45,9 @@ class AppLocalizations {
         'email': 'Email',
         'dob': 'Ngày sinh',
         'gender': 'Giới tính',
-        'add_avatar': 'Thêm Avatar', // Thêm chuỗi văn bản này
-        'log_out' : 'Thoát tài khoản',
+        'add_avatar': 'Thêm Avatar',
+        'notifcation': 'Thông báo', 
+        'log_out' : 'Thoát tài khoản',// Thêm chuỗi văn bản này
       },
     };
 
@@ -65,7 +67,7 @@ class AppLocalizations {
   String get gender => _localizedStrings['gender']!;
   String get addAvatar => _localizedStrings['add_avatar']!; // Thêm getter này
   String get logout => _localizedStrings['log_out']!;
-
+  String get notifcation => _localizedStrings['notification']!;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

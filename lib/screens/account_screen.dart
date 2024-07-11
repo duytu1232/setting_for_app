@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
+import 'package:setting_for_app/screens/help_screen.dart';
+import 'package:setting_for_app/screens/notification_screen.dart';
 import 'package:setting_for_app/widget/theme_provider.dart';
 import '../language/app_localizations.dart';
 import '../language/language_privider.dart';
@@ -25,6 +27,10 @@ class _AccountScreenState extends State<AccountScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Ionicons.chevron_back_outline),
+        ),
         leadingWidth: 100,
       ),
       body: SingleChildScrollView(
@@ -87,7 +93,7 @@ class _AccountScreenState extends State<AccountScreen> {
             ),
             const SizedBox(height: 40),
             Text(
-              localizations.settings,
+              localizations.settings, //Tiêu đề
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w500,
@@ -139,7 +145,14 @@ class _AccountScreenState extends State<AccountScreen> {
               bgColor: Colors.blue.shade100,
               iconColor: Colors.blue,
               value: "",
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const NotificationScreen(),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 20),
             SettingSwitch(
@@ -162,16 +175,23 @@ class _AccountScreenState extends State<AccountScreen> {
               bgColor: Colors.green.shade100,
               iconColor: Colors.green,
               value: "",
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HelpScreen(),
+                  ),
+                );
+              },
             ),
             const SizedBox(height: 20),
             SettingItem(
-                title: localizations.logout,
-                icon: Ionicons.log_out_outline,
-                bgColor: Colors.red.shade100,
-                iconColor: Colors.red,
-                value: "",
-                onTap: () {}, //Nhấn để thoát tài khoản về đăng nhập
+              title: localizations.logout,
+              icon: Ionicons.log_out_outline,
+              bgColor: Colors.red.shade100,
+              iconColor: Colors.red,
+              value: "",
+              onTap: () {}, //Nhấn để thoát tài khoản về đăng nhập
             )
           ],
         ),
