@@ -1,3 +1,3 @@
-# setting_for_app
+# Setting for App
 
-A new Flutter project.
+This is the Setting Widget for a basic app
